@@ -1,13 +1,160 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:wght@400;500&display=swap");
+:root {
+  --yellow: rgb(231, 181, 0);
+  --light-gray: rgb(190, 190, 194);
+  --red: rgb(252, 56, 56);
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  font-size: 16px;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+}
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 10px;
+  cursor: pointer;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0.3rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--light-gray);
+  border-radius: 0.3rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(144, 144, 144);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+input[type="checkbox"],
+button,
+.add,
+.box {
+  cursor: pointer;
+}
+h1 {
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1.5;
+  color: var(--light-gray);
+}
+h2 {
+  font-weight: 400;
+}
+h3 {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  font-size: 2.3rem;
+}
+h4 {
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.absolute {
+  position: absolute;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  font-size: 1.1rem;
+  border-radius: 0.2rem;
+  padding: 0.4rem 0.7rem;
+  transition: 0.3s ease-in;
+  text-transform: uppercase;
+}
+.fill-btn,
+.outline-btn:hover {
+  border: none;
+  background-color: black;
+  color: white;
+}
+.fill-btn:hover,
+.outline-btn {
+  background: none;
+  color: black;
+  border: solid 2px black;
+}
+
+.dish-list {
+  width: 100%;
+  height: max-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2rem;
+}
+
+.Header,
+.Home,
+.Dish,
+.Categories,
+.Area,
+.Random,
+.Ingredients,
+.Choose,
+.DishDetails {
+  width: 100%;
+}
+.Categories,
+.Area {
+  padding: 9rem 10% 5rem;
+  gap: 2rem;
+  align-items: center;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  .dish-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 }
